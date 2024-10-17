@@ -1,11 +1,17 @@
-import { Product } from "../..";
+import { Product } from "../../types/types";
 
 type ProductsListProps = {
-  list: Array<>;
+  list: Array<Product>;
 };
 
-function ProductsList() {
-  return <li></li>;
+function ProductsList({ list }: ProductsListProps) {
+  return (
+    <li>
+      {list.map((product) => (
+        <li>{product.name}</li>
+      ))}
+    </li>
+  );
 }
 
 export default ProductsList;

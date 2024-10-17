@@ -1,0 +1,12 @@
+.header {
+  padding-top: 2rem;
+  border-bottom: 2px solid black;
+  display: block;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.main {
+  display: flex;
+  padding: 2rem;
+}
