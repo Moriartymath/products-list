@@ -9,6 +9,7 @@ export type Product = {
   };
   weight: string;
   comments: Array<Comment>;
+  itemCount: number;
 };
 
 export type Comment = {

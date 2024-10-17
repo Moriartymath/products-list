@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Product } from "../types/types";
-import { act } from "react";
 
 export type initialStateType = {
   items: Array<Product>;
@@ -17,11 +16,18 @@ const productsSlice = createSlice({
     addItems(state, action) {
       if (!state.items.find((el) => el.id === action.payload.id)) {
         state.items.push(action.payload);
+        localStorage.setItem("items", JSON.stringify(state.items));
       }
+    },
+
+    removeItem(state, action) {
+      const index = state.items.findIndex((item) => item.id == action.payload);
+      state.items.splice(index, 1);
+      localStorage.setItem("items", JSON.stringify(state.items));
     },
   },
 });
 
-export const { addItems } = productsSlice.actions;
+export const { addItems, removeItem } = productsSlice.actions;
 
 export default productsSlice.reducer;

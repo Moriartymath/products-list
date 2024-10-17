@@ -18,10 +18,7 @@ function ModalProduct({ setIsOpenModal, list }: ModalProps) {
   const onConfirm = () => {
     if (selectedItem) {
       dispatch(addItems({ ...selectedItem, itemCount: count }));
-      const currentItems = JSON.parse(localStorage.getItem("items") || "[]");
 
-      currentItems.push({ ...selectedItem, itemCount: count });
-      localStorage.setItem("items", JSON.stringify(currentItems));
       setIsOpenModal(false);
     }
   };

@@ -1,8 +1,8 @@
 .item {
   display: flex;
   flex-direction: column;
-  height: 22rem;
-  width: 16rem;
+  height: 28rem;
+  width: 20rem;
   padding: 0.5rem;
   border: 1px solid black;
   border-radius: 1rem;
@@ -38,7 +38,7 @@
   padding-left: 2rem;
   border-radius: 0.5rem;
   background-color: greenyellow;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .modalContainer {
