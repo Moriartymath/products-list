@@ -25,9 +25,26 @@ const productsSlice = createSlice({
       state.items.splice(index, 1);
       localStorage.setItem("items", JSON.stringify(state.items));
     },
+    updateItemInfo(state, action) {
+      console.log(action);
+      const currentIndex = state.items.findIndex(
+        (item) => action.payload.id == item.id
+      );
+      const currentItem = state.items[currentIndex];
+
+      const newData = action.payload.item;
+
+      state.items.splice(currentIndex, 1, {
+        ...currentItem,
+        ...newData,
+        comments: currentItem.comments,
+      });
+
+      localStorage.setItem("items", JSON.stringify(state.items));
+    },
   },
 });
 
-export const { addItems, removeItem } = productsSlice.actions;
+export const { addItems, removeItem, updateItemInfo } = productsSlice.actions;
 
 export default productsSlice.reducer;

@@ -4,6 +4,7 @@ import styles from "./Item.module.css";
 import { useDispatch } from "react-redux";
 import { removeItem } from "../../../store/productSlice";
 import Modal from "react-modal";
+import { useNavigate } from "react-router";
 
 type ItemProps = {
   data: Product;
@@ -12,6 +13,7 @@ type ItemProps = {
 function Item({ data }: ItemProps) {
   const dispatch = useDispatch();
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const navigate = useNavigate();
 
   const onDelete = () => {
     dispatch(removeItem(data.id));
@@ -19,7 +21,10 @@ function Item({ data }: ItemProps) {
   };
 
   return (
-    <li className={styles.item}>
+    <li
+      className={styles.item}
+      onClick={() => navigate(`/products/${data.id}`)}
+    >
       <div className={styles.imageContainer}>
         <img src={data.imageUrl} alt="Image" />
       </div>

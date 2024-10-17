@@ -24,6 +24,6 @@ body {
   position: relative;
   font-weight: 400;
   display: flex;
-
+  
   flex-direction: column;
 }
