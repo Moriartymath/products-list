@@ -28,11 +28,13 @@ function Item({ data }: ItemProps) {
       <div className={styles.details}>
         <h3>{data.name}</h3>
         <h3>Count: {data.itemCount}</h3>
-        <button onClick={() => navigate(`/products/${data.id}`)}>
-          See details
-        </button>
+        <div className={styles.buttonsContainer}>
+          <button onClick={() => navigate(`/products/${data.id}`)}>
+            See details
+          </button>
 
-        <button onClick={() => setIsOpenModal(true)}>Delete</button>
+          <button onClick={() => setIsOpenModal(true)}>Delete</button>
+        </div>
       </div>
       {isOpenModal && (
         <Modal isOpen={isOpenModal}>
@@ -44,6 +46,7 @@ function Item({ data }: ItemProps) {
               &#x2715;
             </button>
             <h1>Are you sure you want to delete?</h1>
+
             <button onClick={onDelete}>Yes</button>
             <button onClick={() => setIsOpenModal(false)}>No</button>
           </div>

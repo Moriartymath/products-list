@@ -1,7 +1,7 @@
 .item {
   display: flex;
   flex-direction: column;
-  height: 28rem;
+  height: 30rem;
   width: 20rem;
   padding: 0.5rem;
   border: 1px solid black;
@@ -84,13 +84,23 @@
 
 .listItem {
   padding: 0.5rem;
+  background-color: bisque;
 }
 
 .listItem:hover {
-  filter: brightness(1.02);
-  background-color: bisque;
+  filter: brightness(1.08);
 }
 .listContainer {
   display: flex;
   gap: 0.5rem;
+}
+.inputSearch {
+  width: 10rem;
+  padding: 0.5rem;
+  align-self: center;
+}
+.buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }

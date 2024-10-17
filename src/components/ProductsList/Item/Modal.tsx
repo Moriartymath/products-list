@@ -32,7 +32,9 @@ function ModalProduct({ setIsOpenModal, list }: ModalProps) {
           &#x2715;
         </button>
         <input
+          placeholder="Search for items"
           type="text"
+          className={styles.inputSearch}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
