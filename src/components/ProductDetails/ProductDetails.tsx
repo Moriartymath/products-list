@@ -5,7 +5,12 @@ import Modal from "react-modal";
 type ProductDetailsProps = {
   item: Product;
 };
-import { Form, useActionData, useFormAction } from "react-router-dom";
+import {
+  Form,
+  useActionData,
+  useFormAction,
+  useNavigate,
+} from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { updateItemInfo } from "../../store/productSlice";
 
@@ -13,7 +18,7 @@ export async function action({ request }) {
   const data = await request.formData();
   console.log(data);
   const newObj = {
-    imageUrl: data.get("imageURL"),
+    imageUrl: data.get("imageUrl"),
     name: data.get("name"),
     count: data.get("count"),
     size: {
@@ -31,6 +36,7 @@ function ProductDetails({ item }: ProductDetailsProps) {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const dispatch = useDispatch();
   const data = useActionData();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(updateItemInfo({ item: data, id: item.id }));
@@ -41,6 +47,9 @@ function ProductDetails({ item }: ProductDetailsProps) {
 
   return (
     <div className={styles.container}>
+      <button onClick={() => navigate("/products")}>
+        Back to all products
+      </button>
       <div>
         {Object.keys(item)
           .filter((key) => key !== "comments")

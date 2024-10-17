@@ -21,16 +21,17 @@ function Item({ data }: ItemProps) {
   };
 
   return (
-    <li
-      className={styles.item}
-      onClick={() => navigate(`/products/${data.id}`)}
-    >
+    <li className={styles.item}>
       <div className={styles.imageContainer}>
         <img src={data.imageUrl} alt="Image" />
       </div>
       <div className={styles.details}>
         <h3>{data.name}</h3>
         <h3>Count: {data.itemCount}</h3>
+        <button onClick={() => navigate(`/products/${data.id}`)}>
+          See details
+        </button>
+
         <button onClick={() => setIsOpenModal(true)}>Delete</button>
       </div>
       {isOpenModal && (
