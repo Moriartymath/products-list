@@ -1,0 +1,83 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  height: 22rem;
+  width: 16rem;
+  padding: 0.5rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  row-gap: 2rem;
+}
+
+.imageContainer {
+  height: 60%;
+  width: 100%;
+}
+
+.imageContainer img,
+.modalImageContainer img {
+  object-fit: fill;
+  height: 100%;
+  width: 100%;
+}
+
+.details {
+  display: flex;
+
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.details button {
+  width: fit-content;
+  align-self: center;
+  border: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  border-radius: 0.5rem;
+  background-color: greenyellow;
+  font-size: 1.2rem;
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.exitButtn {
+  align-self: flex-start;
+  padding: 0.5rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+}
+.buttons * {
+  font-size: 1.2rem;
+  padding: 1rem 3rem 1rem 3rem;
+  border-radius: 0.5rem;
+}
+
+.detailsModal {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  gap: 6rem;
+}
+
+.containerCount {
+  display: flex;
+  gap: 2rem;
+}
+.containerDetailsModal {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}

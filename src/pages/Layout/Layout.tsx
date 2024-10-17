@@ -1,5 +1,7 @@
 import { Outlet } from "react-router";
 import styles from "./Layout.module.css";
+import { useState } from "react";
+import ModalProduct from "../../components/ProductsList/Item/Modal";
 
 function Layout() {
   return (

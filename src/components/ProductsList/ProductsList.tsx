@@ -1,16 +1,17 @@
-import { Product } from "../../types/types";
+import Item from "./Item/Item";
+import styles from "./ProductsList.module.css";
+import { useSelector } from "react-redux";
+import { storeType } from "../../store/store";
 
-type ProductsListProps = {
-  list: Array<Product>;
-};
+function ProductsList() {
+  const list = useSelector((store: storeType) => store.products.items);
 
-function ProductsList({ list }: ProductsListProps) {
   return (
-    <li>
+    <ul className={styles.list}>
       {list.map((product) => (
-        <li>{product.name}</li>
+        <Item key={product.id} data={product} />
       ))}
-    </li>
+    </ul>
   );
 }
 
