@@ -81,3 +81,16 @@
   flex-direction: column;
   row-gap: 3rem;
 }
+
+.listItem {
+  padding: 0.5rem;
+}
+
+.listItem:hover {
+  filter: brightness(1.02);
+  background-color: bisque;
+}
+.listContainer {
+  display: flex;
+  gap: 0.5rem;
+}

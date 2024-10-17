@@ -36,11 +36,18 @@ function ModalProduct({ setIsOpenModal, list }: ModalProps) {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <div>
+        <div className={styles.listContainer}>
           {list
             .filter((el) => el.name.includes(search))
             .map((el) => {
-              return <p onClick={() => setSelectedItem(el)}>{el.name}</p>;
+              return (
+                <p
+                  className={styles.listItem}
+                  onClick={() => setSelectedItem(el)}
+                >
+                  {el.name}
+                </p>
+              );
             })}
         </div>
         {selectedItem && (
